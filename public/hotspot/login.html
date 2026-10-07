@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Denop Hostel Wifi - Login</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #0284c7, #0369a1);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      color: #fff;
+    }
+    .card {
+      background: #fff;
+      color: #0f172a;
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .logo {
+      width: 56px; height: 56px;
+      background: #0ea5e9;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.5rem; color: #fff;
+      margin: 0 auto 1rem;
+    }
+    h1 { text-align: center; font-size: 1.35rem; margin-bottom: 0.25rem; }
+    .sub { text-align: center; color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 0.35rem; }
+    input {
+      width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e1;
+      border-radius: 0.75rem; font-size: 1rem; margin-bottom: 1rem;
+    }
+    input:focus { outline: none; border-color: #0ea5e9; box-shadow: 0 0 0 3px rgba(14,165,233,0.2); }
+    button {
+      width: 100%; padding: 0.9rem; background: #0284c7; color: #fff;
+      border: none; border-radius: 0.75rem; font-size: 1rem; font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #0369a1; }
+    .error { background: #fef2f2; color: #b91c1c; padding: 0.6rem 0.8rem; border-radius: 0.5rem; font-size: 0.85rem; margin-bottom: 1rem; }
+    .links { text-align: center; margin-top: 1.25rem; font-size: 0.85rem; }
+    .links a { color: #0284c7; text-decoration: none; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">D</div>
+    <h1>Denop Hostel Wifi</h1>
+    <p class="sub">Enter your voucher code or username</p>
+
+    $(if error)
+    <div class="error">$(error)</div>
+    $(endif)
+
+    <form name="login" action="$(link-login-only)" method="post">
+      <input type="hidden" name="dst" value="$(link-orig)" />
+      <input type="hidden" name="popup" value="true" />
+
+      <label for="username">Username / Voucher Code</label>
+      <input type="text" id="username" name="username" value="$(username)" placeholder="Enter code" autofocus />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password (same as code if voucher)" />
+
+      <button type="submit">Connect to Internet</button>
+    </form>
+
+    <div class="links">
+      <a href="https://denop-hotspot.onrender.com/portal">Buy a package with Mobile Money →</a>
+    </div>
+  </div>
+</body>
+</html>
